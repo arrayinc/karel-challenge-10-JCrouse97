@@ -13,3 +13,39 @@ the following pattern in a 5×3 world.
 Another special case you need to consider is that of a world that is only
 one column wide or one row high.
 */
+
+//-------------------LOCAL LIBRARY---------------------
+
+//***KAREL MUST START FACING RIGHT***
+
+import "turns";
+
+function toWall(){
+	while(frontIsClear()){
+		move();
+	}
+}
+
+function up() {
+	turnLeft();
+	move();
+	turnRight();
+}
+
+function right() {
+	move();
+}
+
+function left() {
+	turnAround();
+	move();
+	turnAround();
+}
+
+function down() {
+	turnRight();
+	move();
+	turnLeft();
+}
+
+//-----------------------Actual Program-----------------------------
