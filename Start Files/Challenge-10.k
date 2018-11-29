@@ -49,3 +49,41 @@ function down() {
 }
 
 //-----------------------Actual Program-----------------------------
+
+function Checkmate(){
+	placeCheckers();
+
+}
+
+function placeCheckers(){
+	while(frontIsClear()){
+		putBeeper();
+		move();
+		if(frontIsClear()){
+			move();
+		} else{
+			if(facingEast()){
+				turn1();
+				}
+			else{
+				turn2();
+				}
+			}//else
+	}//while
+}//placecheckers
+
+
+
+function turn1(){
+	turnLeft();
+	move();
+	turnLeft();
+}
+
+function turn2(){
+	turnRight();
+	if(frontIsClear()){
+		move();
+		turnRight();
+	}
+}
